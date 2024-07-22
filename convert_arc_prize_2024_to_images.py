@@ -2,7 +2,7 @@ from src.datasets.arc_prize_2024 import json_file_read
 from src.datasets.arc_prize_2024 import challenges_to_image_files
 
 
-def convert_arc_prize_2024_to_images():
+def convert_arc_prize_2024_to_images(skip_if_working_dir_exists=True):
     training_challenges = json_file_read('datasets/arc-prize-2024/json/arc-agi_training_challenges.json')
     training_solutions = json_file_read('datasets/arc-prize-2024/json/arc-agi_training_solutions.json')
 
@@ -14,7 +14,7 @@ def convert_arc_prize_2024_to_images():
         training_challenges,
         training_solutions,
         image_variations=10,
-        skip_if_working_dir_exists=True
+        skip_if_working_dir_exists=skip_if_working_dir_exists
     )
 
     challenges_to_image_files(
@@ -22,9 +22,9 @@ def convert_arc_prize_2024_to_images():
         evaluation_challenges,
         evaluation_solutions,
         image_variations=False,
-        skip_if_working_dir_exists=True
+        skip_if_working_dir_exists=skip_if_working_dir_exists
     )
 
 
 if __name__ == '__main__':
-    convert_arc_prize_2024_to_images()
+    convert_arc_prize_2024_to_images(skip_if_working_dir_exists=False)

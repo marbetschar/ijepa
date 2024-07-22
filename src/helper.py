@@ -87,9 +87,9 @@ def init_model(
         if isinstance(m, torch.nn.Linear):
             trunc_normal_(m.weight, std=0.02)
             if m.bias is not None:
-                torch.nn.init.constant_(m.bias, 0)
+                torch.nn.init.constant_(m.bias, 0.0)
         elif isinstance(m, torch.nn.LayerNorm):
-            torch.nn.init.constant_(m.bias, 0)
+            torch.nn.init.constant_(m.bias, 0.0)
             torch.nn.init.constant_(m.weight, 1.0)
 
     for m in encoder.modules():
