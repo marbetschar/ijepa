@@ -19,11 +19,13 @@ nvidia-nvjitlink-cu12==12.5.82
 nvidia-nvtx-cu12==12.1.105
 opencv-python==4.10.0.84
 pillow==10.4.0
+pytorch-triton-rocm==3.0.0
 PyYAML==6.0.1
+setuptools==70.0.0
 sympy==1.13.1
-# pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.0
+# pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.1
 # see: https://pytorch.org/get-started/locally/
-torch==2.3.1+rocm6.0
-torchaudio==2.3.1+rocm6.0
-torchvision==0.18.1+rocm6.0
+torch==2.4.0+rocm6.1
+torchaudio==2.4.0+rocm6.1
+torchvision==0.19.0+rocm6.1
 typing_extensions==4.12.2

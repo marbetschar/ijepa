@@ -28,8 +28,9 @@ def setup_amd_environment():
             supported_gpus.append("Navi 1")
         elif gpu.startswith("Navi 2"):
             print("--- Applying Navi 2 settings")
-            os.environ["HSA_OVERRIDE_GFX_VERSION"]="10.3.0"
-            os.environ["HIP_VISIBLE_DEVICES"]=str(i)
+            os.environ["PYTORCH_ROCM_ARCH"]="gfx1032"
+            os.environ["HSA_OVERRIDE_GFX_VERSION"]="10.3.2"
+            os.environ["HIP_VISIBLE_DEVICES"]="1" # str(i)
             supported_gpus.append("Navi 2")
         elif gpu.startswith("Navi 3"):
             print("--- Applying Navi 3 settings")

@@ -40,7 +40,9 @@ def image_to_file(dir_name, image_name, image_data, image_variations=0):
             cv2.imwrite(os.path.join(dir_name, f"{image_name}-{i}.png"), image_variation)
 
 def image_from_file(file_path):
-    return cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
+    image = torchvision.io.read_image(file_path, mode=torchvision.io.ImageReadMode.GRAY)
+    return image.squeeze(0)
+    # return cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
 
 def is_valid_input_file(file_path):
     return file_path.__contains__("input-")
